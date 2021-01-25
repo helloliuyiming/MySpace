@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 import me.lym.myspace.util.bean.Address;
-
+/**
+ * @author lym
+ * @version 1.0
+ * @date 2021/1/24 18:20
+ */
 @Data
 public class Diary implements Serializable {
     private Integer id;

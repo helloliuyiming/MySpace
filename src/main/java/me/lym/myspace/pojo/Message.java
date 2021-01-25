@@ -2,7 +2,11 @@ package me.lym.myspace.pojo;
 
 
 import lombok.Data;
-
+/**
+ * @author lym
+ * @version 1.0
+ * @date 2021/1/24 18:20
+ */
 @Data
 public class Message {
 
