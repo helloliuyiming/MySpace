@@ -9,11 +9,12 @@
 + friend
 + ...
 ### 访问资源的身份
-+ 搜索引擎   
-+ 匿名用户  
-+ friends  
-+ own  
-+ institution  
++ 搜索引擎
++ 匿名用户
++ guest
++ friends
++ own
++ institution
 + ...
 ### 访问资源的action
 + view
@@ -34,4 +35,10 @@
     + plugin
     + 动态换肤
     + 更新升级
-    
+  
+## 面临的问题
+
++ 接口滥用  
+  内容全被光明正大的拿走...
++ 内容不可控  
+  不良内容完全不可控
