@@ -2,6 +2,8 @@ package me.lym.myspace.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import me.lym.myspace.util.bean.Address;
 /**
@@ -10,6 +12,7 @@ import me.lym.myspace.util.bean.Address;
  * @date 2021/1/24 18:20
  */
 @Data
+@TableName("rs_diary")
 public class Diary implements Serializable {
     private Integer id;
     private Date date;

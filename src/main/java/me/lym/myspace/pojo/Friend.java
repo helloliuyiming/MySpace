@@ -1,5 +1,6 @@
 package me.lym.myspace.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import java.util.Date;
 /**
@@ -8,6 +9,7 @@ import java.util.Date;
  * @date 2021/1/24 18:20
  */
 @Data
+@TableName("rs_friend")
 public class Friend {
   private long id;
   private String alias;

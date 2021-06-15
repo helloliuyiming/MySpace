@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: me.lym.myspace.MyspaceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.931 s <<< FAILURE! - in me.lym.myspace.MyspaceApplicationTests
+testMybatisPlus  Time elapsed: 5.509 s  <<< ERROR!
+org.mybatis.spring.MyBatisSystemException: 
+nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### The error may exist in me/lym/myspace/mapper/BlogMapper.java (best guess)
+### The error may involve me.lym.myspace.mapper.BlogMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at me.lym.myspace.MyspaceApplicationTests.testMybatisPlus(MyspaceApplicationTests.java:31)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+### The error may exist in me/lym/myspace/mapper/BlogMapper.java (best guess)
+### The error may involve me.lym.myspace.mapper.BlogMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at me.lym.myspace.MyspaceApplicationTests.testMybatisPlus(MyspaceApplicationTests.java:31)
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at me.lym.myspace.MyspaceApplicationTests.testMybatisPlus(MyspaceApplicationTests.java:31)
+Caused by: java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at me.lym.myspace.MyspaceApplicationTests.testMybatisPlus(MyspaceApplicationTests.java:31)
+Caused by: com.mysql.cj.exceptions.CJException: Unknown database 'myspace'
+	at me.lym.myspace.MyspaceApplicationTests.testMybatisPlus(MyspaceApplicationTests.java:31)
+

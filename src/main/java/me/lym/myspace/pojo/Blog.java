@@ -1,5 +1,6 @@
 package me.lym.myspace.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import me.lym.myspace.util.bean.Address;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @date 2021/1/24 18:20
  */
 @Data
+@TableName("rs_blog")
 public class Blog {
     private int id;
     private String title;

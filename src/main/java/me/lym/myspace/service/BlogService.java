@@ -8,6 +8,7 @@ import me.lym.myspace.pojo.Blog;
  * @date 2021/1/24 18:20
  */
 
+
 public interface BlogService extends IService<Blog> {
 
 }
