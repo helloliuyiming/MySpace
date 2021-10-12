@@ -1,0 +1,21 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: blog-management
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.24.11:8848
+        metadata:
+          swagger2: http://ip:8800/swagger-ui.html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zxc654321
+    url: jdbc:mysql://localhost:3306/myspace?characterEncoding=UTF-8&useUnicode=true&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: MYSQL
+    show-sql: true
