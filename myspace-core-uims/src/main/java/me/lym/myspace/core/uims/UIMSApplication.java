@@ -1,12 +1,12 @@
-package me.lym.myspace.core.gateway;
+package me.lym.myspace.core.uims;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GatewayApplication {
+public class UIMSApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(UIMSApplication.class,args);
     }
 }

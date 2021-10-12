@@ -6,6 +6,15 @@
     <modules>
         <module>myspace-core-gateway</module>
         <module>myspace-resource-blog</module>
+        <module>myspace-core-console</module>
+        <module>myspace-component-push</module>
+        <module>myspace-component-storage</module>
+        <module>myspace-extension-open</module>
+        <module>myspace-app-social</module>
+        <module>myspace-core-hub-connector</module>
+        <module>myspace-core-monitor</module>
+        <module>myspace-component-schedule</module>
+        <module>myspace-core-uims</module>
     </modules>
 
     <parent>
@@ -26,6 +35,17 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
