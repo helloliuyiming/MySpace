@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import me.lym.myspace.resource.blog.entity.Blog;
 import me.lym.myspace.resource.blog.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -42,5 +43,13 @@ public class BlogRestController {
     public String deleteById(@PathVariable(value = "id") Integer id) {
         blogRepository.deleteById(id);
         return "success";
+    }
+
+    @Value("testApolloValue")
+    String testApolloValue = "";
+
+    @GetMapping(value = "testApollo")
+    public String testApollo(){
+        return "testApolloValue:"+testApolloValue;
     }
 }
