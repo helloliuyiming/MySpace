@@ -1,0 +1,14 @@
+app:
+  id: myspace
+apollo:
+  meta: http://localhost:8080
+  bootstrap:
+    enabled: true
+    namespaces:
+      - application
+      - redis
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

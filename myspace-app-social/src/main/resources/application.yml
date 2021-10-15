@@ -1,0 +1,11 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: console
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.24.11:8848
+        metadata:
+          swagger2: http://ip:8800/swagger-ui.html

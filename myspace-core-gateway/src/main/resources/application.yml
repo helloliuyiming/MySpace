@@ -2,4 +2,11 @@ server:
   port: 8089
 spring:
   application:
-    name: gateway
+    name: myspace-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: blog
+          uri: lb://myspace-blog-management
+          predicates:
+            - Path=/blog/**

@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping(value = "blog")
 @Api(tags = "Blog-Management API")
@@ -45,11 +47,13 @@ public class BlogRestController {
         return "success";
     }
 
-    @Value("testApolloValue")
+    @Value("${testApolloValue}")
     String testApolloValue = "";
 
     @GetMapping(value = "testApollo")
-    public String testApollo(){
+    public String testApollo(HttpServletRequest request){
+        String token = request.getHeader("token");
+        System.out.println("token = " + token);
         return "testApolloValue:"+testApolloValue;
     }
 }

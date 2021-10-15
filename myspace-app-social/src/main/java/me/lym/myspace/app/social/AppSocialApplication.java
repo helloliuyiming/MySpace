@@ -1,19 +1,16 @@
-package me.lym.myspace.core.gateway;
+package me.lym.myspace.app.social;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
 @EnableDiscoveryClient
 @EnableApolloConfig
-public class GatewayApplication {
+public class AppSocialApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(AppSocialApplication.class,args);
     }
-
 }
