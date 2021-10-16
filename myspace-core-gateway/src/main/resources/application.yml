@@ -10,3 +10,6 @@ spring:
           uri: lb://myspace-blog-management
           predicates:
             - Path=/blog/**
+feign:
+  hystrix:
+    enabled: true
