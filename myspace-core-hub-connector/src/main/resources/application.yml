@@ -1,0 +1,16 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: console
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.24.11:8848
+        metadata:
+          swagger2: http://ip:8800/swagger-ui.html
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test
+      client-id: c1

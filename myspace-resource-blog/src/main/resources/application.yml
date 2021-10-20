@@ -18,3 +18,5 @@ spring:
       ddl-auto: update
     database: MYSQL
     show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
