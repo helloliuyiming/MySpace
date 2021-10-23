@@ -1,5 +1,8 @@
 package me.lym.myspace.resource.blog.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import me.lym.myspace.resource.blog.entity.Blog;
@@ -23,12 +26,15 @@ public class BlogRestController {
 
     @PostMapping
     @ApiOperation(value = "新建blog")
+    @HystrixCommand(commandProperties = {
+    })
     public Blog newBlog(@RequestBody Blog blog) {
         System.out.println("BlogRestController.newBlog");
         return blogService.newBlog(blog);
     }
 
-    @PatchMapping()
+    @PatchMapping
+    @HystrixCommand
     public Blog update(@RequestBody Blog blog) {
         return blogService.updateById(blog);
     }
