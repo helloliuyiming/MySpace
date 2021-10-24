@@ -35,3 +35,5 @@
 + [Nacos服务发现](http://localhost:8848/nacos/)
 + [Skywalking UI](http://localhost:8085)
 + [kibana](http://localhost:5601/)
++ Prometheus
++ [grafana](http://localhost:3000/)
