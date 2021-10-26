@@ -5,6 +5,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.ribbon.proxy.annotation.Hystrix;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import me.lym.myspace.resource.blog.entity.Blog;
 import me.lym.myspace.resource.blog.repository.BlogRepository;
 import me.lym.myspace.resource.blog.service.BlogService;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "blog")
+@Slf4j
 @Api(tags = "Blog-Management API")
 public class BlogRestController {
 
@@ -29,7 +31,7 @@ public class BlogRestController {
     @HystrixCommand(commandProperties = {
     })
     public Blog newBlog(@RequestBody Blog blog) {
-        System.out.println("BlogRestController.newBlog");
+        log.info("BlogRestController.newBlog");
         return blogService.newBlog(blog);
     }
 

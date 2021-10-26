@@ -8,7 +8,7 @@
 + 评论
 + friend
 + ...
-### 来宾管理
+### 访问角色管理
 + 搜索引擎
 + 匿名用户
 + guest
@@ -37,3 +37,6 @@
 + [kibana](http://localhost:5601/)
 + Prometheus
 + [grafana](http://localhost:3000/)
+
+### notice
++ spring.application.name属性写在bootstrap.yml中，否则logback-spring.xml启动时读取不到
