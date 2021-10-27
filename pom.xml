@@ -18,6 +18,7 @@
         <module>myspace-common-util</module>
         <module>myspace-resource-webdav</module>
         <module>myspace-resource-stream</module>
+        <module>myspace-app-im</module>
     </modules>
 
     <parent>
