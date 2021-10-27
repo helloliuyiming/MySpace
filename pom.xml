@@ -16,6 +16,8 @@
         <module>myspace-component-schedule</module>
         <module>myspace-core-uims</module>
         <module>myspace-common-util</module>
+        <module>myspace-resource-webdav</module>
+        <module>myspace-resource-stream</module>
     </modules>
 
     <parent>

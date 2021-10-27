@@ -1,0 +1,9 @@
+app:
+  id: myspace
+apollo:
+  meta: http://localhost:8080
+  bootstrap:
+    enabled: true
+spring:
+  application:
+    name: myspace-stream-management
