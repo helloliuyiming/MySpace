@@ -19,6 +19,7 @@
         <module>myspace-resource-webdav</module>
         <module>myspace-resource-stream</module>
         <module>myspace-app-im</module>
+        <module>myspace-core-runtime</module>
     </modules>
 
     <parent>
