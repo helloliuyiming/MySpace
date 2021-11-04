@@ -1,0 +1,35 @@
+server:
+  port: 8830
+spring:
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          swagger2: http://ip:8800/swagger-ui.html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zxc654321
+    url: jdbc:mysql://localhost:3306/myspace?characterEncoding=UTF-8&useUnicode=true&serverTimezone=UTC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: MYSQL
+    show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
+
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        step: 1m
+        descriptions: true
+  web:
+    server:
+      auto-time-requests: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,prometheus,metrics,httptrace,threaddump,heapdump

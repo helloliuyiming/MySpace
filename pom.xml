@@ -20,6 +20,7 @@
         <module>myspace-resource-stream</module>
         <module>myspace-app-im</module>
         <module>myspace-core-runtime</module>
+        <module>myspace-resource-daily</module>
     </modules>
 
     <parent>
@@ -116,6 +117,12 @@
                 <version>5.2.0</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>6.6</version>
+            </dependency>
 
         </dependencies>
 

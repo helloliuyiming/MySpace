@@ -16,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient
 @EnableSwagger2
 @EnableApolloConfig
-@EnableCircuitBreaker
 public class BlogManagementApplication {
 
     public static void main(String[] args) {

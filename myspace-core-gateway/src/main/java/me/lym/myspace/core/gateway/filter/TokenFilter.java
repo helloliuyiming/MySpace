@@ -14,6 +14,9 @@ import reactor.core.publisher.Mono;
 @Component
 public class TokenFilter implements GlobalFilter, Ordered {
 
+    private static final String LOCALHOST = "";
+
+    private static final String ADMIN_TOKEN = "{\"roles\":[\"admin\"]}";
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
     @Autowired
@@ -21,14 +24,14 @@ public class TokenFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println("TokenFilter.filter");
         ServerHttpRequest request = exchange.getRequest();
-
         //查看token header
         String token = request.getHeaders().getFirst("token");
+
         if (token != null) {
             String plainToken = null;
             Exception exception = null;
+
             try {
                 plainToken = decryptToken(token);
                 request.mutate().header("token",plainToken).build();
@@ -41,20 +44,22 @@ public class TokenFilter implements GlobalFilter, Ordered {
             }
             return chain.filter(exchange);
         }
-        //从redis中获取
 
-        //带域名去uims获取
-
-        //无域名填充匿名用户
-
-        String anonymousToken = redisTemplate.opsForValue().get("anonymousToken");
-        if (anonymousToken == null) {
-            anonymousToken = tokenService.getAnonymousToken();
-            redisTemplate.opsForValue().set("anonymousToken",anonymousToken);
+        String hostName = request.getRemoteAddress().getHostName();
+        if (LOCALHOST.equals(hostName)) {
+            request.mutate().header("token",ADMIN_TOKEN).build();
+            return chain.filter(exchange);
         }
-        System.out.println("anonymousToken = " + anonymousToken);
-        exchange.getRequest().mutate().header("token", anonymousToken).build();
-        //将现在的request 变成 exchange对象
+        //从redis中获取
+        token = redisTemplate.opsForValue().get("token_ip_" + hostName);
+        if (token != null) {
+            request.mutate().header("token",token).build();
+            return chain.filter(exchange);
+        }
+        //带域名去uims获取
+        token = tokenService.getTokenByIp(hostName);
+        redisTemplate.opsForValue().set("token_ip_"+hostName,token);
+
         return chain.filter(exchange.mutate().request(request).build());
     }
 

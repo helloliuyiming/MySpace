@@ -43,7 +43,7 @@ public class BlogRestController {
 
     @GetMapping(value = "{id}")
     public Blog getById(@PathVariable(value = "id") String id) {
-        System.out.println("BlogRestController.getById");
+        log.debug("BlogRestController.getById");
         final Blog one = blogService.findById(id);
         return one;
     }

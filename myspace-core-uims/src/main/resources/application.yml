@@ -1,5 +1,8 @@
 server:
   port: 8092
 spring:
-  application:
-    name: uims-management
+  cloud:
+    sentinel:
+      transport:
+        port: 8079
+        dashboard: localhost:8079
