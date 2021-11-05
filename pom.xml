@@ -21,6 +21,7 @@
         <module>myspace-app-im</module>
         <module>myspace-core-runtime</module>
         <module>myspace-resource-daily</module>
+        <module>myspace-base-app</module>
     </modules>
 
     <parent>

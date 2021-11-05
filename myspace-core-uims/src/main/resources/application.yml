@@ -1,8 +1,14 @@
 server:
   port: 8092
+
 spring:
   cloud:
     sentinel:
       transport:
         port: 8079
         dashboard: localhost:8079
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zxc654321
+    url: jdbc:mysql://localhost:3306/myspace?characterEncoding=UTF-8&useUnicode=true&serverTimezone=UTC

@@ -89,5 +89,10 @@
             <artifactId>logstash-logback-encoder</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>me.lym.myspace</groupId>
+            <artifactId>myspace-base-app</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

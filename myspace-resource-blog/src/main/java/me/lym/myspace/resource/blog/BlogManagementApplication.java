@@ -1,6 +1,7 @@
 package me.lym.myspace.resource.blog;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
+import me.lym.myspace.base.app.EnableAppSecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient
 @EnableSwagger2
 @EnableApolloConfig
+@EnableAppSecurity
 public class BlogManagementApplication {
 
     public static void main(String[] args) {
