@@ -13,29 +13,34 @@ public class User implements UserDetails {
     private String username;
     private String password;
 
+    private Collection<? extends GrantedAuthority> authorities;
+    private boolean accountNotExpired;
+    private boolean accountNotLocked;
+    private boolean credentialsNonExpired;
+    private boolean enabled;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return accountNotExpired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return accountNotLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return credentialsNonExpired;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return enabled;
     }
 }

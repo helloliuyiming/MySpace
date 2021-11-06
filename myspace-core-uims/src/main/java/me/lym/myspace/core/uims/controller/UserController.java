@@ -1,8 +1,8 @@
 package me.lym.myspace.core.uims.controller;
 
 import io.swagger.annotations.Api;
-import me.lym.myspace.core.uims.dao.UserDao;
 import me.lym.myspace.core.uims.entity.User;
+import me.lym.myspace.core.uims.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,11 +14,11 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    UserService userService;
 
     @PostMapping
     public User newUser(@RequestBody User user) {
-        user.setId(userDao.newUser(user));
+        userService.createUser(user);
         return user;
     }
 
@@ -30,21 +30,21 @@ public class UserController {
         if (offset == null) {
             offset = 0;
         }
-        return userDao.queryWithPage(limit,offset);
+        return userService.queryWithPage(limit,offset);
     }
 
     @GetMapping("{id}")
-    public User queryById(@PathVariable(value = "id") Integer id) {
-        return userDao.queryById(id);
+    public User queryById(@PathVariable(value = "id") String id) {
+        return userService.queryById(id);
     }
 
     @DeleteMapping("{id}")
-    public void deleteById(@PathVariable(value = "id") Integer id) {
-        userDao.deleteById(id);
+    public void deleteById(@PathVariable(value = "id") String id) {
+        userService.deleteById(id);
     }
 
     @GetMapping(value = "group/{id}")
-    public List<User> queryByGroupId(@PathVariable("id") Integer id) {
-        return userDao.queryByGroupId(id);
+    public List<User> queryByGroupId(@PathVariable("id") String id) {
+        return userService.queryByGroupId(id);
     }
 }
