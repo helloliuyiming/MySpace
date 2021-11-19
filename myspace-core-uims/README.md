@@ -12,6 +12,8 @@
 {
     "deadline": "2022-10-12 12:15:36",
     "version": 3,
+    "type": "user/app",
+    "principal": "app-name/username",
     "user": {
         "id": 12,
         ...
